@@ -63,12 +63,28 @@ header{
     display: none;
   }
   
+  @media (max-width: 1000px) {
+    .thumb-text{
+        display: none !important;
+    }
+    .subbanner{
+        height: fit-content !important;
+        min-width: 100px;
+    }
+    .dot-slide{
+        height: 230px !important;
+    }
+    .click{
+        display: none;
+    }
+  }
   @media (max-width: 600px) {
     .topnav a:not(:first-child) {display: none;}
     .topnav a.icon {
       float: right;
       display: block;
     }
+    
     .topnav a:hover:not(:first-child) {
         background-color: #ffffff;
         color: rgb(245, 143, 65);
@@ -199,7 +215,6 @@ a{
     top: 2px;
 }
 .aspect-ratio-169 {
-    display: block;
     position: relative;
     padding-top: 56.25%;
     transition: 0.5s;
@@ -207,7 +222,7 @@ a{
   }
   
   .aspect-ratio-169 img {
-    display: block;
+    
     position: absolute;
     width: 100%;
     height: 100%;
@@ -215,19 +230,77 @@ a{
     left: 0;
   }
   #slide {
-    padding-bottom: 100px;
+    padding-bottom: 200px;
     overflow: hidden;
     position: relative;
   }
   .dot-slide{
     position: absolute;
-    height: 30px;
+
+    height: 315px;
     display: flex;
     width: 100%;
     bottom: 40px;
     justify-content: center;
     background: none;
+    padding: 0 12%;
   }
+  .dot-slide ul{
+    display: flex;
+  }
+    .thumb{
+        justify-content: center;
+    }
+
+    .thumb img{
+        border-radius: 50%;
+        width: 30%;
+        min-width: 60px;
+    }
+    .thumb-text{
+        padding: 0 20px;
+        display: block;
+    }
+
+    .subbanner{
+    flex: 3;
+    height: 325px;
+    background-color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0 10px ;
+    cursor: pointer;
+    padding: 15px;
+    position: relative;
+
+    }
+    .subbanner:hover{
+        transform: translateY(-15px);
+        transition: 0.3s;
+
+    }
+    .click{
+        position: absolute;
+        right: 20%;
+        bottom: 10px;
+        left: 20%;
+    }
+    .click a{
+        color: blue;
+        padding: 5px;
+        background-color: #d3bead;
+        border-radius: 5px;
+    }
+    
+    .subbanner h1{
+        font-size: 17px;
+        padding-bottom: 7px;
+    }
+    .subbanner p{
+        font-size: 13px;
+        opacity: 0.7;
+    }
+
   .dot{
     height: 12px;
     width: 12px;
@@ -237,9 +310,17 @@ a{
     cursor: pointer;
   }
 
-  .dot.active{
-    background-color: rgb(255, 255, 255);
+  .subbanner.active{
+    background-color: rgb(46, 49, 60);
+    color:#fff
   }
+  .subbanner.active h1{
+    
+    color:#d5782d
+  }
+  
+
+
 
   .content-container{
     padding: 0 13%;
