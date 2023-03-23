@@ -69,7 +69,7 @@ header{
     }
     .subbanner{
         height: fit-content !important;
-        min-width: 100px;
+        flex: 1;
     }
     .dot-slide{
         height: 230px !important;
@@ -77,8 +77,9 @@ header{
     .click{
         display: none;
     }
+
   }
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     .topnav a:not(:first-child) {display: none;}
     .topnav a.icon {
       float: right;
@@ -105,7 +106,7 @@ header{
    
   }
   
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     .topnav.responsive {position: relative;}
     .topnav.responsive .icon {
       position: absolute;
@@ -253,7 +254,7 @@ a{
     }
 
     .thumb img{
-        border-radius: 50%;
+        border-radius: 25%;
         width: 30%;
         min-width: 60px;
     }
@@ -264,7 +265,7 @@ a{
 
     .subbanner{
     flex: 3;
-    height: 325px;
+    height: 260px;
     background-color: #fff;
     border-radius: 10px;
     text-align: center;
@@ -272,6 +273,7 @@ a{
     cursor: pointer;
     padding: 15px;
     position: relative;
+    justify-content: center;
 
     }
     .subbanner:hover{
@@ -284,14 +286,22 @@ a{
         right: 20%;
         bottom: 10px;
         left: 20%;
+        width: 60%;
+        
     }
     .click a{
-        color: blue;
+        
         padding: 5px;
-        background-color: #d3bead;
+        
         border-radius: 5px;
     }
-    
+    .click img{
+        width: 120px;
+    }
+    .click img:hover{
+        transform: scale(1.1);
+        transition: 0.3s;
+    }
     .subbanner h1{
         font-size: 17px;
         padding-bottom: 7px;
@@ -314,9 +324,9 @@ a{
     background-color: rgb(46, 49, 60);
     color:#fff
   }
-  .subbanner.active h1{
+  .subbanner.active .click a img{
+    filter: invert(100%);
     
-    color:#d5782d
   }
   
 
@@ -336,7 +346,7 @@ a{
   }
   .white{
     background-color: #ffffff;
-    
+    text-align: left;
     
   }
   .flex{
@@ -347,7 +357,7 @@ a{
     background-color:#25213a;
     color: #fff;
   }
-  .content-container.white p{
+  ontent-container.white p{
     text-align: center;
   }
   .space{
@@ -356,6 +366,13 @@ a{
   }
   .title-content {
     text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    padding: 30px;
+    
+  }
+  .title-content.secound {
+    text-align: left;
     font-size: 30px;
     font-weight: 700;
     padding: 30px;
@@ -380,27 +397,30 @@ a{
 
 
   .game-right{
-    width: 68%;
-    overflow: hidden;
-    float: left;
+    width: 100%;
     background: #fff;
     box-shadow: 0 0 10px #b5b5b5;
     border-radius: 10px;
     padding: 20px;
-    
+    position: relative;
     
 }
 .game-right-content{
     display: flex;
+    text-align: start;
+    flex-wrap: wrap;
+    
     
 }
 .gamebigimg{
-    flex:2;
+    flex:3;
     object-fit: cover;
-    width: 40%;
-    height: 350px;
+    height: auto;
+    width: auto;
     left: 0;
     right: 0;
+    border-radius: 15px;
+    
 }
 .game-detail{
     flex: 4;
@@ -429,10 +449,27 @@ a{
     font-size: 15px;
     font-weight: normal;
 }
+.app-google {
+
+}
 .app-google img{
     padding-top: 25px;
-    width: 45%;
+    
+    width: 30%;
 
+}
+.apps{
+    max-width: 100%;
+}
+
+.apps .game-right-content {
+    margin: 22px;
+}
+.apps .game-right-content .gamebigimg{
+    flex: 3;
+}
+.apps .game-right-content .game-detail{
+    flex: 5;
 }
 
 .game-left{
@@ -500,7 +537,7 @@ a{
     text-align: center;
 }
 .content-column h1{
-    font-size: 18px;
+    font-size: 15px;
     padding:10px;
     text-transform: uppercase;
 }
@@ -613,7 +650,7 @@ footer{
 
  
 .content-column h2{
-    font-size: 13;
+    font-size: 12px;
     padding: 8px;
     font-weight: lighter;
     text-align: justify;
@@ -634,7 +671,10 @@ footer{
     border-top: 1px solid #ffffff;
     width: 100%;
 }
-@media (max-width: 600px) {
+@media (max-width: 800px) {
+    *{
+        font-size: 13px;
+    }
     
     footer{
         padding: 0 10px;
@@ -658,11 +698,7 @@ footer{
         padding: 0;
     }
     
-    .aspect-ratio-169 img{
-        width: 100%;
-        height: auto;
-        
-    }
+    
     #slide{
         padding-top: 70px;
     }
@@ -671,6 +707,19 @@ footer{
     }   
     .title-content b{
         font-size: 20px !important;
+    }
+    .game-right-content{
+        flex-direction: column;
+    }
+    .app-google{
+        text-align: center;
+        
+    }
+    .app-google img{
+        width: 100px;
+    }
+    .game-detail{
+        padding: 15px;
     }
     
 }

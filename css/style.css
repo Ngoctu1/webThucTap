@@ -61,9 +61,10 @@ header{
   
   .topnav .icon {
     display: none;
+    margin-top: 10px;
   }
   
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     .topnav a:not(:first-child) {display: none;}
     .topnav a.icon {
       float: right;
@@ -86,10 +87,11 @@ header{
     .topnav{
         display: block;
     }
+    
    
   }
   
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     .topnav.responsive {position: relative;}
     .topnav.responsive .icon {
       position: absolute;
@@ -198,8 +200,9 @@ a{
     
     top: 2px;
 }
+/*      END Header      */
 .aspect-ratio-169 {
-    display: block;
+    
     position: relative;
     padding-top: 56.25%;
     transition: 0.5s;
@@ -207,7 +210,7 @@ a{
   }
   
   .aspect-ratio-169 img {
-    display: block;
+    
     position: absolute;
     width: 100%;
     height: 100%;
@@ -215,16 +218,16 @@ a{
     left: 0;
   }
   #slide {
-    padding-bottom: 100px;
+    margin-bottom: 100px;
     overflow: hidden;
     position: relative;
   }
   .dot-slide{
     position: absolute;
-    height: 30px;
+    
     display: flex;
     width: 100%;
-    bottom: 40px;
+    bottom: 3%;
     justify-content: center;
     background: none;
   }
@@ -553,7 +556,7 @@ footer{
     border-top: 1px solid #ffffff;
     width: 100%;
 }
-@media (max-width: 600px) {
+@media (max-width: 1200px) {
     
     footer{
         padding: 0 10px;
@@ -577,11 +580,7 @@ footer{
         padding: 0;
     }
     
-    .aspect-ratio-169 img{
-        width: 100%;
-        height: auto;
-        
-    }
+    
     #slide{
         padding-top: 70px;
     }
