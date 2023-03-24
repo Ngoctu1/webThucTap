@@ -535,7 +535,7 @@ footer{
 
  
 .content-column h2{
-    font-size: 13;
+    font-size: 13px !important;
     padding: 8px;
     font-weight: lighter;
     text-align: justify;
