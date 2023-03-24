@@ -19,8 +19,8 @@
             <a href="/webThucTap/index.html"><img width="130px" height="auto" src="image/logo-w-1.png"></a>
             <a href="/webThucTap/index.html" class="acti">Home</a>
             <a href="/webThucTap/product.html">Product</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
+            <a href="/webThucTap/contact.html">Contact</a>
+            <a href="#about">About us</a>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">
               <i class="fa fa-bars"></i>
             </a>
@@ -71,6 +71,59 @@
         <li>Bảo hành 3 năm</li>
         <li>Tài khoản được cấp full quyền owner</li></div>
     </section>
+    <section class="content-container white">
+        <div class="space"></div>
+        <div class="title-content">
+            Discover Our 
+            <span><b style="color: orange; font-size: 30px;"> Workplace & Member</b></span>
+           
+        </div>
+        
+        <div class="image-container">
+            <div class="image-wrapper">
+              <div>
+                <img src="image/workplace-1.jpg" alt="">
+                
+                <h3>  Workplace</h3>
+                
+              </div>
+              <div>
+                <img src="image/workplace-2.jpg" alt="">
+                
+                <h3>  Workplace</h3>
+                
+              </div>
+              <div>
+                <img src="image/workplace-3.jpg" alt="">
+                
+                <h3>  Workplace</h3>
+                
+              </div>
+              <div>
+                <img src="image/workplace-4.jpg" alt="">
+                
+                <h3> Workplace </h3>
+                
+              </div>
+              <div>
+                <img src="image/workplace-5.jpg" alt="">
+                
+                <h3> Friendly Membership</h3>
+                
+              </div>
+              <div>
+                <img src="image/workplace-6.jpg" alt="">
+                
+                <h3>  Workplace & Member</h3>
+                
+              </div>
+              
+              
+            </div>
+          </div>
+    </section>
+    
+
     <section class="content-container">
         <div class="space"></div>
         <div class="title-content">
@@ -86,8 +139,8 @@
         <div class="content-table">
             <div class="content-column white columncenter">
                 <img src="image/icon-Million-User.png">
-                <h4>+500</h4>
-                <h1><i id="dotfagreen" class="fa-solid fa-circle"></i> Million User</h1>
+                <h4>+35000</h4>
+                <h1><i id="dotfagreen" class="fa-solid fa-circle"></i> User</h1>
                 <p>of continous daily growth </p>
 
             </div>
@@ -196,6 +249,75 @@
     }
 
     setInterval(imgslide, 5000)
+
+    const imageWrapper = document.querySelector('.image-wrapper')
+const imageItems = document.querySelectorAll('.image-wrapper > *')
+const imageLength = imageItems.length
+const perView = 3
+console.log(imageLength)
+let totalScroll = 0
+const delay = 2000
+
+imageWrapper.style.setProperty('--per-view', perView)
+for(let i = 0; i < perView; i++) {
+  imageWrapper.insertAdjacentHTML('beforeend', imageItems[i].outerHTML)
+}
+
+let autoScroll = setInterval(scrolling, delay)
+
+const detail = document.querySelectorAll('.app-google-2')
+console.log(detail)
+let index2 = 1
+function adddetail(){
+    
+    const detail1 = document.querySelector('.acti')
+    detail1.classList.remove("acti")
+    dotitems[index2].classList.add("acti")
+
+}
+function scrolling() {
+  totalScroll++
+  if(totalScroll == imageLength + 1) {
+    clearInterval(autoScroll)
+    totalScroll = 1
+    imageWrapper.style.transition = '0s'
+    imageWrapper.style.left = '0'
+    autoScroll = setInterval(scrolling, delay)
+  }
+  const widthEl = document.querySelector('.image-wrapper > :first-child').offsetWidth + 24
+  imageWrapper.style.left = `-${totalScroll * widthEl}px`
+  imageWrapper.style.transition = '.3s'
+}
+
+const imageWrapper2 = document.querySelector('.image-wrapper')
+const imageItems2 = document.querySelectorAll('.image-wrapper > *')
+const imageLength2 = imageItems2.length
+const perView2 = 3
+console.log(imageLength2)
+let totalScroll2 = 0
+const delay2 = 2000
+
+imageWrapper2.style.setProperty('--per-view', perView2)
+for(let i = 0; i < perView2; i++) {
+  imageWrapper2.insertAdjacentHTML('beforeend', imageItems2[i].outerHTML)
+}
+
+let autoScroll2 = setInterval(scrolling2, delay2)
+
+
+function scrolling2() {
+  totalScroll2++
+  if(totalScroll2 == imageLength2 + 1) {
+    clearInterval(autoScroll2)
+    totalScroll2 = 1
+    imageWrapper2.style.transition = '0s'
+    imageWrapper2.style.left = '0'
+    autoScroll2 = setInterval2(scrolling2, delay2)
+  }
+  const widthEl = document.querySelector('.image-wrapper > :first-child').offsetWidth + 24
+  imageWrapper.style.left = `-${totalScroll * widthEl}px`
+  imageWrapper.style.transition = '.3s'
+}
 </script>
 
 </html>
