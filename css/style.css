@@ -24,10 +24,10 @@ header{
     width: 100%;
     flex-wrap: wrap;
     height: fit-content;
-    
     min-height: 70px;
     z-index: 1;
     background-color: #fff;
+    
     
 }
 /*------------------------*/
@@ -413,11 +413,8 @@ a{
     padding-top: 40px;
 }
 .content-column{
-    
     flex: 29%;
     padding: 10px;
-    
-
 }
 .content-column.columncenter{
     text-align: center;
